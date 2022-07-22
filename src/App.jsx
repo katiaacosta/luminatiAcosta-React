@@ -1,76 +1,55 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-
-// function App() {
-  // const [count, setCount] = useState(0) 
-
-
-  // agrego
-  // const condition = true
-  // let resultado = null
-
-  // resultado = condition ? "El resultado es correcto" : "el resultado no es correcto"
-  // console.log(`Voy a imprimir: ${resultado}`);
-  // fin agrego
-
-  // return (
-  //   <div className="App">
-  //     <div>
-  //       <a href="https://vitejs.dev" target="_blank">
-  //         <img src="/vite.svg" className="logo" alt="Vite logo" />
-  //       </a>
-  //       <a href="https://reactjs.org" target="_blank">
-  //         <img src={reactLogo} className="logo react" alt="React logo" />
-  //       </a>
-  //     </div>
-  //     <h1>Vite + React</h1>
-  //     <div className="card">
-  //       <button onClick={() => setCount((count) => count + 1)}>
-  //         count is {count}
-  //       </button>
-  //       <p>
-  //         Edit <code>src/App.jsx</code> and save to test HMR
-  //       </p>
-  //     </div>
-  //     <p className="read-the-docs">
-  //       Click on the Vite and React logos to learn more
-  //     </p>
-  //   </div>
-  // )
-
-
-  // agrego
-//   return (
-//     // tengo que devolver un unico div, asi que uso uno contenedor y muchos adentro de ser necesario
-    
-//     <>  {/* div contenedor */}      
-//       {/* primer div */}
-//       <div className="App">
-//         <div>Hola</div>
-//         <input />
-//       </div>
-//       {/* segundo div */}
-//       <div>
-//         <label htmlFor=''>Hola otra vez</label>
-//       </div>
-//     </>
-//   )
-//   // fin agrego
-// }
-
-// export default App
-
-
-// import './App.css';
-import NavBar from "./components/navbar/NavBar"
+// import reactLogo from './assets/react.svg'
+// import './App.css'
+import NavBar from "./components/NavBar"
+import Novedades from './components/Novedades'
+import logo from '../img/logo.png'
+import Error from './components/Error'
 
 function App() {
 
-    return (
+  
+    // let open = true
 
+    const suma = () => {
+        console.log("estoy sumando");
+    }
+
+    // muestra en consola
+    // if (open) {
+    //     console.log("esta abierto");        
+    // }else{
+    //     console.log("esta cerrado");
+    // }
+
+
+  // <NavBar titulo = "nombreProyecto/>" === Navbar ('nombreProyecto')
+  // estado
+    let subtitulo = "Componentes"
+    return (
         <>
-        <NavBar/>
+          {/* mostrar imagen */}
+        <img src={logo} alt="" />
+        {/* muestra en pantalla */}
+        {/* {open ? "open":"closed"} */}
+        <div className='App' style={{paddingTop:10,justifyItems:'center',justifyItems:'center'}}>
+          <h1>Hola</h1>
+          {/* <div>Saludos</div> */}
+          <button onClick={suma}>Clickeame</button>
+          <input />
+        </div>
+        <NavBar titulo = "nombreProyecto" subtitulo={subtitulo}/>
+
+        {/*App-->Novedadees-->ContenedorComponents-->Titulo */}
+        <Novedades/> 
+
+        <Error>
+          {/* puede llamar multiples tareas porque se va a contener dentro del modulo children */}
+          <p>Hola, soy Children</p>
+          
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo suscipit possimus, fugit expedita soluta dignissimos distinctio cupiditate repellendus. Suscipit asperiores quae placeat atque iusto maxime animi odio earum, saepe officiis!</p>
+        </Error>
+
         
         </>
     )

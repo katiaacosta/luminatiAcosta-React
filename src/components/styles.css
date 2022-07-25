@@ -29,7 +29,7 @@ body {
 }
 
 .tamCard {
-  width: 13vw;
+  width: 20vw;
   height: 40vh;
   background-color: aquamarine;
   display: flex;
@@ -38,7 +38,16 @@ body {
   text-align: center;
   justify-content: center;
   justify-items: center;
-  margin: 1vh;
+  margin: 3vh;
+}
+
+.cantidad {
+  display: flex;
+  align-content: space-between;
+}
+
+.spaceBetween {
+  margin: 0.5vh;
 }
 
 /*# sourceMappingURL=styles.css.map */

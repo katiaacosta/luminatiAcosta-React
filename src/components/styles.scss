@@ -24,7 +24,7 @@ body {
 
 
 .tamCard{
-    width: 13vw;
+    width: 20vw;
     height: 40vh;
     background-color:aquamarine;
     display: flex;
@@ -33,7 +33,20 @@ body {
     text-align: center;
     justify-content: center;
     justify-items: center;
-    margin: 1vh;
+    margin: 3vh;
+    // padding: 2vh;
+}
+
+.cantidad{
+    display: flex;
+    align-content: space-between;
+    // margin: 3vh;
+    // padding: 3vh;
+}
+
+.spaceBetween{
+    margin: 0.5vh;
+    // padding: 2vh;
 }
 
 

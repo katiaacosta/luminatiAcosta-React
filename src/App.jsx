@@ -9,12 +9,6 @@ import './components/styles.css'
 
 function App() {
 
-  // let cantidad = 0
-  //   cantidad.onClick = () => {
-  //       cantidad++
-  //       console.log(cantidad);
-  //   }
-
   return (
 
     <>
@@ -26,7 +20,8 @@ function App() {
       <div className='menu'>
         {/* menu + carrito de compras */}
         <Menu/>       
-        <Carrito/>   
+        <Carrito componente = {<Card/>}>  
+        </Carrito>
       </div>
       
       {/* list container */}

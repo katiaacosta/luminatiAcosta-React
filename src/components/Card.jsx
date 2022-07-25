@@ -11,24 +11,26 @@ const Card = ({producto,color}) => {
 
     function maximo(){
         setNumero(numero +  1)
+        console.log(`${producto} + agregado exitosamente`);
     }
 
     useEffect(() => {
         if (numero === 9) {
-            console.log("ultima unidad disponible");
+            console.log("Ultima unidad disponible");
         }
-      },[numero])
+    },[numero])
       
     return (
         <>
             <div>
                 <p style={{background:color}}>{producto}</p>
-                <button disabled={numero===0} onClick={minimo}>Quitar</button>
-                <p>Cantidad: {numero}</p>
-                <button disabled={numero===10} onClick={maximo}>Agregar</button>
+                <div className="cantidad">
+                    <button className="spaceBetween" disabled={numero===0} onClick={minimo}>Quitar</button>                
+                    <p className="spaceBetween">{numero}</p>
+                    <button className="spaceBetween" disabled={numero===10} onClick={maximo}>Agregar</button>
+                </div>
             </div>
 
-            {/* <Carrito cantidad={numero}/> */}
         </>
     )
 }

@@ -2,12 +2,14 @@
 // import { useEffect } from 'react'
 import '../components/styles.css'
 import { BsCart3 } from "react-icons/bs";
+import Card from './Card';
 
-const Carrito = ({cantidad}) => {
+const Carrito = ({cantidad, componente}) => {
 
   return (
     <>
-    <div>{cantidad} <BsCart3 className='boxCarrito'/></div>
+    <div>{componente.numero} <BsCart3 className='boxCarrito'/></div>
+    
 
     </>
   )

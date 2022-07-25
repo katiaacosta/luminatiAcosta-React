@@ -9,11 +9,11 @@ const Menu = () => {
     return (
     <>
         <div>            
-            <button>Inicio</button>
-            <button>Quienes Somos</button>
-            <button>Tienda</button>
-            <button>Contactanos</button>
-            <button>Encontranos</button>
+            <button className="spaceBetween">Inicio</button>
+            <button className="spaceBetween">Quienes Somos</button>
+            <button className="spaceBetween">Tienda</button>
+            <button className="spaceBetween">Contactanos</button>
+            <button className="spaceBetween">Encontranos</button>
         </div>
     </>
   )

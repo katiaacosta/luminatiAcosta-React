@@ -1,9 +1,8 @@
 // import reactLogo from './assets/react.svg'
 // import './App.css'
-import Card from './components/Card';
-import Carrito from './components/Carrito';
 import Header from './components/header';
 import Menu from './components/Menu';
+import Productos from './components/Productos';
 import './components/styles.css'
 
 
@@ -20,30 +19,11 @@ function App() {
       <div className='menu'>
         {/* menu + carrito de compras */}
         <Menu/>       
-        <Carrito componente = {<Card/>}>  
-        </Carrito>
       </div>
       
       {/* list container */}
-      <div className='menu'>
-        {/* card del producto */}
-        <div className='tamCard'>
-          {/* suma y resta cantidad de productos */}
-          <Card producto= "Producto1" color="red"/>
-        </div>
-
-        <div className="tamCard">
-          <Card producto= "Producto2" color="blue"/>
-        </div> 
-
-        <div className="tamCard">
-          <Card producto= "Producto3" color="green"/>
-        </div> 
-
-        <div className="tamCard">
-          <Card producto= "Producto4" color="purple" numero=""/>
-        </div> 
-      </div>
+      <Productos/>
+      
         
     </>
   )

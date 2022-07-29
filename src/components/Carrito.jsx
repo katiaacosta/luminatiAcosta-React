@@ -2,7 +2,6 @@
 // import { useEffect } from 'react'
 import '../components/styles.css'
 import { BsCart3 } from "react-icons/bs";
-import Card from './Card';
 
 const Carrito = ({cantidad, componente}) => {
 

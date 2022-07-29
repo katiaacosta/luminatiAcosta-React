@@ -5,3 +5,68 @@
     margin: 10px;
     padding: 10px;
 }
+
+.prod {
+    margin-top: 1vh;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    .images{
+        width: 100%;
+        border-style: dotted;
+        border-color: rgb(172, 97, 0);
+        margin: 10px;
+        padding: 30px;
+        transition: 1s;
+
+        &:hover {
+            width: 102%;
+        }
+    }
+
+    .prodList{
+        justify-content: center;
+        margin: 1vh;
+    }
+}
+
+.itemDetails {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 15px;
+
+    .precioProd {
+        color: rgb(172, 97, 0);
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 14px;
+        transition: 1s;
+        opacity: 0.2;
+    }
+
+    .precioProd:hover{
+        opacity: 3;
+    }
+
+    .cardButton {
+        background: rgb(13, 199, 206);
+        border-radius: 10px;
+        border-style: dotted;
+        width: 65%;
+        border-color: rgb(172, 97, 0);
+        color: white;
+        font-weight: 600;
+        padding: 12px 0;
+        margin: 0.5vh;
+    }
+
+    .cardButton:hover{
+        opacity: 2;
+        color: black;
+    }
+
+}
+

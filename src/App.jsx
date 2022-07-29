@@ -2,7 +2,7 @@
 // import './App.css'
 import Header from './components/header';
 import Menu from './components/Menu';
-import Productos from './components/Productos';
+import ProductListContainer from './components/ProductListContainer';
 import './components/styles.css'
 
 
@@ -22,14 +22,9 @@ function App() {
       </div>
       
       {/* list container */}
-      <Productos/>
-      
-        
+      <ProductListContainer/>        
     </>
-  )
-    
-
-    
+  )    
 }
 
 export default App;

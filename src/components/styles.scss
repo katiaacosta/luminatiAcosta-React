@@ -2,18 +2,18 @@
 
 body {
     margin: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     min-width: 290px;
     background-color: whitesmoke;
+
 }
 
 .menu{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 10px;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .header{
@@ -22,31 +22,14 @@ body {
     align-items: flex-end;
 }
 
-
-.tamCard{
-    width: 20vw;
-    height: 40vh;
-    background-color:aquamarine;
-    display: flex;
-    align-items: flex-end;
-    padding: 1vh;
-    text-align: center;
-    justify-content: center;
-    justify-items: center;
-    margin: 3vh;
-    // padding: 2vh;
-}
-
 .cantidad{
     display: flex;
-    align-content: space-between;
-    // margin: 3vh;
-    // padding: 3vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .spaceBetween{
     margin: 0.5vh;
-    // padding: 2vh;
 }
 
 

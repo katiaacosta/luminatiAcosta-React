@@ -1,7 +1,6 @@
 import Carrito from "./Carrito"
-import Card from "./Card"
+import Product from "./Product"
 
-// import React from 'react'
 const Menu = () => {   
     return (
     <>
@@ -13,8 +12,8 @@ const Menu = () => {
             <button className="spaceBetween">Encontranos</button>
         </div>
         <div>
-            {/* Le paso CARD, porque asumo que en algun momento encontraremos una forma de pasarle numero para actualizar el carrito, imagino que sera de alguna manera parecia a lo que tengo hasta ahora */}
-            <Carrito componente = {<Card/>}/>
+            {/* Le paso Product, porque asumo que en algun momento encontraremos una forma de pasarle numero para actualizar el carrito, imagino que sera de alguna manera parecia a lo que tengo hasta ahora */}
+            <Carrito componente = {<Product/>}/>
         </div>
     </>
   )

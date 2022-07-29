@@ -4,7 +4,9 @@ import App from './App'
 // import './index.css'
 // llama a funcion App
 ReactDOM.createRoot(document.getElementById('root')).render( //root llama al script del index.html y renderiza la funcion app
-  <React.StrictMode>
+  <>
+  {/* <React.StrictMode> */}
     <App />
-  </React.StrictMode>
+  {/* </React.StrictMode> */}
+  </>
 )

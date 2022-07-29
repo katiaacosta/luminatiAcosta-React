@@ -6,9 +6,65 @@
   padding: 10px;
 }
 
+.prod {
+  margin-top: 1vh;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.prod .images {
+  width: 100%;
+  border-style: dotted;
+  border-color: rgb(172, 97, 0);
+  margin: 10px;
+  padding: 30px;
+  transition: 1s;
+}
+.prod .images:hover {
+  width: 102%;
+}
+.prod .prodList {
+  justify-content: center;
+  margin: 1vh;
+}
+
+.itemDetails {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 15px;
+}
+.itemDetails .precioProd {
+  color: rgb(172, 97, 0);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+  transition: 1s;
+  opacity: 0.2;
+}
+.itemDetails .precioProd:hover {
+  opacity: 3;
+}
+.itemDetails .cardButton {
+  background: rgb(13, 199, 206);
+  border-radius: 10px;
+  border-style: dotted;
+  width: 65%;
+  border-color: rgb(172, 97, 0);
+  color: white;
+  font-weight: 600;
+  padding: 12px 0;
+  margin: 0.5vh;
+}
+.itemDetails .cardButton:hover {
+  opacity: 2;
+  color: black;
+}
+
 body {
   margin: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   min-width: 290px;
   background-color: whitesmoke;
@@ -16,10 +72,9 @@ body {
 
 .menu {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 10px;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .header {
@@ -28,22 +83,10 @@ body {
   align-items: flex-end;
 }
 
-.tamCard {
-  width: 20vw;
-  height: 40vh;
-  background-color: aquamarine;
-  display: flex;
-  align-items: flex-end;
-  padding: 1vh;
-  text-align: center;
-  justify-content: center;
-  justify-items: center;
-  margin: 3vh;
-}
-
 .cantidad {
   display: flex;
-  align-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 .spaceBetween {

@@ -122,56 +122,56 @@ const ProductListContainer = () => {
         img: <img className='images' src="img/escritorio3.png" alt="escritorio3" />
       },
       {
-        id:15,
+        id:17,
         nombre:"estante1",
         descripcion:"Descripcion1",
         precio:"$1765",
         img: <img className='images' src="img/estante1.png" alt="estante1" />
       },
       {
-        id:15,
+        id:18,
         nombre:"estante2",
         descripcion:"Descripcion2",
         precio:"$1765",
         img: <img className='images' src="img/estante2.png" alt="estante2" />
       },
       {
-        id:15,
+        id:19,
         nombre:"estante3",
         descripcion:"Descripcion3",
         precio:"$1765",
         img: <img className='images' src="img/estante3.png" alt="estante3" />
       },
       {
-        id:15,
+        id:20,
         nombre:"estante4",
         descripcion:"Descripcion4",
         precio:"$1765",
         img: <img className='images' src="img/estante4.png" alt="estante4" />
       },
       {
-        id:15,
+        id:21,
         nombre:"estante5",
         descripcion:"Descripcion5",
         precio:"$1765",
         img: <img className='images' src="img/estante5.png" alt="estante5" />
       },
       {
-        id:15,
+        id:22,
         nombre:"estante6",
         descripcion:"Descripcion6",
         precio:"$1765",
         img: <img className='images' src="img/estante4.png" alt="estante4" />
       },
       {
-        id:15,
+        id:23,
         nombre:"estante7",
         descripcion:"Descripcion7",
         precio:"$1765",
         img: <img className='images' src="img/estante2.png" alt="estante2" />
       },
       {
-        id:15,
+        id:24,
         nombre:"estante8",
         descripcion:"Descripcion8",
         precio:"$1765",

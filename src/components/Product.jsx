@@ -15,7 +15,9 @@ const Product = ({nombre,precio,img,id}) => {
         <div className="itemDetails">
             <div className="precioProd">{precio}</div>
             <div className='cantidad'>
-                <Link to ={ `/item/id/${id}`} className = 'cardButton'>Ver detalle</Link>
+                <Link to ={ `/item/${id}`} className = 'cardButton'>
+                    <button onClick={detalle}>Ver detalle</button>
+                </Link>
             </div>
         </div>
 

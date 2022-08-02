@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import ProductList from './ProductList'
+import ItemDetail from './ItemDetail';
 
 
+const ItemDetailContainer = () => {
 
-const ProductListContainer = () => {
 
-  const [products,setProducts] = useState([]);
+    const [products,setProducts] = useState([]);
   // busco la categoria, dentro del arreglo "listProd" para filtrar
-  const {categoria} = useParams();
+  const {id} = useParams();
 
 
   useEffect(() => {
@@ -185,10 +185,10 @@ const ProductListContainer = () => {
 
     const myPromise = new Promise((resolved,rejected) =>{
       setTimeout(() => {
-        if (!categoria) {
+        if (!id) {
           resolved(listProd)          
         }else{
-          resolved(listProd.filter((prod) => prod.categoria === categoria));
+          resolved(listProd.filter((prod) => prod.id === id));
         }
       }, 500)
     })
@@ -196,13 +196,14 @@ const ProductListContainer = () => {
     myPromise.then((resolved) =>{
       setProducts(resolved);
     })
-  },[categoria])
+  },[id])
+
 
   return (
-    <>
+   <>
     <div className='container'>
       <div className='row'>
-        <ProductList products={products} />
+        <ItemDetail producto={products[id]}/>
       </div>
     </div>
 
@@ -210,4 +211,4 @@ const ProductListContainer = () => {
   )
 }
 
-export default ProductListContainer
+export default ItemDetailContainer

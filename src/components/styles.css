@@ -91,6 +91,15 @@ body {
 
 .spaceBetween {
   margin: 0.5vh;
+  display: flex;
+}
+.spaceBetween .menu {
+  margin: 3px;
+  padding: 5px;
+  border-radius: aqua;
+  border-style: dashed;
+  text-decoration: none;
+  color: black;
 }
 
 /*# sourceMappingURL=styles.css.map */

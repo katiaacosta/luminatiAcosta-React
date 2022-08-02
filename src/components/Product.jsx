@@ -1,31 +1,13 @@
 // import React from 'react'
-import { useState, useEffect } from "react"
+import Count from "./Count"
+import { Link } from "react-router-dom";
 
 
-const Product = ({nombre,precio,img}) => {
-    const [numero, setNumero] = useState(0);
-
-    function minimo(){
-        setNumero(numero - 1)
+const Product = ({nombre,precio,img,id}) => {
+    
+    function detalle(){
+        console.log("click ver detalle");        
     }
-
-    function maximo(){
-        setNumero(numero +  1)
-        console.log(`agregando ${nombre} al carrito...`);
-
-        setTimeout(() => {
-            console.log(`${nombre} agregado exitosamente!`);
-            
-        }, 1000);
-    }
-
-    useEffect(() => {
-        if (numero === 9) {
-            console.log("Ultima unidad disponible");
-        }
-    },[numero])
-
-
     return (
     <>
         <div>{img}</div>
@@ -33,9 +15,7 @@ const Product = ({nombre,precio,img}) => {
         <div className="itemDetails">
             <div className="precioProd">{precio}</div>
             <div className='cantidad'>
-                <button className='cardButton' disabled={numero===0} onClick={minimo}>Quitar</button>                
-                <div className="spaceBetween">{numero}</div>
-                <button className='cardButton' disabled={numero===10} onClick={maximo}>Agregar</button>
+                <Link to ={ `/item/id/${id}`} className = 'cardButton'>Ver detalle</Link>
             </div>
         </div>
 

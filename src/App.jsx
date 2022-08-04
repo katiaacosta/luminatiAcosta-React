@@ -11,26 +11,25 @@ import './components/styles.css'
 function App() {
 
   return (
-
     <>
-    <BrowserRouter>
-     <div className='header'>
-      {/* titulo, marca */}
-        <Header/>
-      </div>
-      
-      <div className='menu'>
-        {/* menu + carrito de compras */}
-        <Menu/>       
-      </div>
-      <Routes>
-        {/* list container */}
-        <Route path='/' element={<ProductListContainer/>}/>
-        <Route path='/category/:categoria' element={<ProductListContainer/>}/>
-        <Route path='/item/:id' element={<ItemDetailContainer/>}/>
-        <Route path='*' element={<h1> Error 404 </h1>}/>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <div className='header'>
+        {/* titulo, marca */}
+          <Header/>
+        </div>
+        
+        <div className='menu'>
+          {/* menu + carrito de compras */}
+          <Menu/>       
+        </div>
+        <Routes>
+          {/* list container */}
+          <Route path='/' element={<ProductListContainer/>}/>
+          <Route path='/category/:categoria' element={<ProductListContainer/>}/>
+          <Route path='/item/:id' element={<ItemDetailContainer/>}/>
+          <Route path='*' element={<h1> Error 404 </h1>}/>
+        </Routes>
+      </BrowserRouter>
     </>
   )     
 }

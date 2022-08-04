@@ -199,12 +199,11 @@ const ProductListContainer = () => {
 
   return (
     <>
-    <div className='container'>
-      <div className='row'>
-        <ProductList products={products} />
+      <div className='container'>
+        <div className='row'>
+          <ProductList products={products} />
+        </div>
       </div>
-    </div>
-
     </>
   )
 }

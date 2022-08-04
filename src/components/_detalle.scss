@@ -2,38 +2,19 @@
     margin-top: 1vh;
     display: flex;
     justify-content: center;
-    /* flex-direction: row; */
-    /* align-items: center; */
     flex-wrap: nowrap;
     align-content: center;
 
     .imagesDetalle{
-        // width: 50%;
         border-style: dotted;
         border-color: rgb(172, 97, 0);
         margin: 10px;
         padding: 30px;
-        // transition: 1s;
-
-        // &:hover {
-        //     width: 102%;
-        // }
-    }
-
-    // .prodList{
-    //     justify-content: center;
-    //     margin: 1vh;
-    // }
-    
+    }    
 }
 
-.itemDetailsDetalle {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // margin: 0px 15px;
+.itemDetailsDetalle {    
     display: flex;
-    // margin: 0px 15px;
     flex-direction: column;
     align-content: space-between;
     justify-content: center;
@@ -49,13 +30,10 @@
         margin-bottom: 14px;
     }
 
-
-
     .cardButton {
         background: rgb(13, 199, 206);
         border-radius: 10px;
         border-style: dotted;
-        // width: 65%;
         border-color: rgb(172, 97, 0);
         color: white;
         font-weight: 600;
@@ -73,5 +51,4 @@
         justify-content: center;
         align-items: center;
     }
-
 }

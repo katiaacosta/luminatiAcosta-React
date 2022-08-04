@@ -1,5 +1,3 @@
-// import React from 'react'
-import Count from "./Count"
 import { Link } from "react-router-dom";
 import '../components/styles.css'
 

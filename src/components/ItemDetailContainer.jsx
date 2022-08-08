@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail';
+import Loader from './Loader';
+
 
 const ItemDetailContainer = () => {
 
-    const [products,setProducts] = useState([]);
+  const [products,setProducts] = useState([]);
+  const[loading, setLoading] = useState(false);
   // busco el ID dentro del arreglo "listProd" para filtrar
   const {id} = useParams();
+
+  useEffect( () => {
+    setTimeout( () => {
+      setLoading(true)
+    }, 2000);
+  },[]);
 
   useEffect(() => {
     const listProd =[
@@ -211,7 +220,7 @@ const ItemDetailContainer = () => {
         }else{
           resolved(listProd.find((prod) => prod.id == id));
         }
-      }, 500)
+      }, 2000)
     })
 
     myPromise.then((resolved) =>{
@@ -219,16 +228,21 @@ const ItemDetailContainer = () => {
     })
   },[id])
 
+  if (!loading) {
+    return (<div className='pos-center'>
+              <Loader/>
+            </div>)    
+  }
 
-    return (
-        <>
-            <div className='container'>
-                <div className='row'>
-                    <ItemDetail producto={products}/>
-                </div>
-            </div>
-        </>
-    )
+  return (
+    <>
+      <div className='container'>
+        <div className='row'>
+            <ItemDetail producto={products}/>
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default ItemDetailContainer

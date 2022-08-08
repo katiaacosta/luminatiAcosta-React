@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Loader from './Loader';
 import ProductList from './ProductList'
-
-
 
 const ProductListContainer = () => {
 
   const [products,setProducts] = useState([]);
+  const[loading, setLoading] = useState(false);
   // busco la categoria, dentro del arreglo "listProd" para filtrar
   const {categoria} = useParams();
 
-  useEffect(() => {
+  useEffect( () => {
+    setTimeout( () => {
+      setLoading(true)
+    }, 2000);
+  },[]);
+
+  useEffect( () => {
     const listProd =[
       {
         id:1,
@@ -196,6 +202,12 @@ const ProductListContainer = () => {
       setProducts(resolved);
     })
   },[categoria])
+
+  if (!loading) {
+    return (<div className='pos-center'>
+              <Loader/>
+            </div>)    
+  }
 
   return (
     <>

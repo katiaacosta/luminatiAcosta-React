@@ -1,24 +1,13 @@
 import React from 'react'
 import Count from './Count'
+import Item from './Item'
+
 
 const ItemDetail = ({producto}) => {
 
     return (
         <>
-            <div className='prodDetalle'>
-                <div>{producto.img}</div>
-                <div className="itemDetailsDetalle">
-                    <div className='detalle'>            
-                        <div className="precioProdDetalle">Nombre Prod: {producto.nombre} </div>
-                        <div className="precioProdDetalle">Categoria: {producto.categoria} </div>
-                        <div className="precioProdDetalle">Precio: {producto.precio}</div>
-                        <div className="precioProdDetalle">Descripcion: {producto.descripcion}</div>
-                        <div className='cantidadDetalle'>
-                            <Count nombre={producto.nombre}/>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Item key={producto.id} img={producto.img} nombre={producto.nombre} categoria={producto.categoria} precio={producto.precio} descripcion={producto.descripcion} />
         </>
     )
 }

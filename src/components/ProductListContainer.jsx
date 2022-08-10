@@ -10,11 +10,11 @@ const ProductListContainer = () => {
   // busco la categoria, dentro del arreglo "listProd" para filtrar
   const {categoria} = useParams();
 
-  useEffect( () => {
-    setTimeout( () => {
-      setLoading(true)
-    }, 2000);
-  },[]);
+  // useEffect( () => {
+  //   setTimeout( () => {
+  //     setLoading(true)
+  //   }, 2000);
+  // },[]);
 
   useEffect( () => {
     const listProd =[
@@ -190,17 +190,20 @@ const ProductListContainer = () => {
 
     const myPromise = new Promise((resolved,rejected) =>{
       setTimeout(() => {
+        setLoading(true)
         if (!categoria) {
           resolved(listProd)          
         }else{
           resolved(listProd.filter((prod) => prod.categoria === categoria));
         }
-      }, 500)
+      }, 2000)
     })
 
     myPromise.then((resolved) =>{
       setProducts(resolved);
     })
+    return () => {
+      setLoading(false)    }
   },[categoria])
 
   if (!loading) {

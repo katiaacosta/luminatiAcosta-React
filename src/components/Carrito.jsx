@@ -1,14 +1,18 @@
-// import React from 'react'
-// import { useEffect } from 'react'
+
 import '../components/styles.css'
-import { BsCart3 } from "react-icons/bs";
+import { BsCart3 } from "react-icons/bs"
+import { Link } from 'react-router-dom'
+import { useContextt } from './Context'
 
-const Carrito = ({cantidad, componente}) => {
+  function Carrito(){
 
-  return (
-    <>
-    <div>{componente.numero} <BsCart3 className='boxCarrito'/></div>
-    
+    const { countItems } = useContextt()
+    return (
+      <>      
+      <Link to="/Cart">
+        < BsCart3 className='boxCarrito'/>
+      </Link>
+      <span className='p-1'>{countItems() || ''}</span>    
 
     </>
   )

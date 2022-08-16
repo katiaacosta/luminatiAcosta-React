@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react"
 
-
-const Count = ({nombre}) => {
-    const [numero, setNumero] = useState(0);
+const Count = ({nombre,onAdd}) => {
+    const [contador, setContador] = useState(0);
 
     function minimo(){
-        setNumero(numero - 1)
+        setContador(contador - 1)
     }
 
     function maximo(){
-        setNumero(numero +  1)
+        setContador(contador +  1)
         console.log(`agregando ${nombre} al carrito...`);
 
         setTimeout(() => {
@@ -19,17 +18,24 @@ const Count = ({nombre}) => {
     }
 
     useEffect(() => {
-        if (numero === 9) {
+        if (contador === 9) {
             console.log("Ultima unidad disponible");
         }
-    },[numero])
+    },[contador])
+
+    useEffect(() => {        
+    },[contador])
+
 
 
   return (
     <>
-        <button className='cardButton' disabled={numero===0} onClick={minimo}>Quitar</button>                
-        <div className="spaceBetween">{numero}</div>
-        <button className='cardButton' disabled={numero===10} onClick={maximo}>Agregar</button>
+        <button className='cardButton' disabled={contador===0} onClick={minimo}>-</button>                
+        <div className="spaceBetween">{contador}</div>
+        <button className='cardButton' disabled={contador===10} onClick={maximo}>+</button>
+        <div>
+            <button className='cardButton' onClick={() => onAdd(contador)}>Agregar al Carrito</button>
+        </div>
     </>
   )
 }

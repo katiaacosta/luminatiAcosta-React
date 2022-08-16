@@ -1,15 +1,42 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Count from './Count'
-import Item from './Item'
+import { useContextt } from './Context';
 
+const ItemDetail = ({producto, contador}) => {
+    const [item, setItem] = useState(false)
 
-const ItemDetail = ({producto}) => {
+    const {addItem} = useContextt()
 
-    return (
+    const onAdd = (contador) => {
+        console.log( `Se agregaron ${contador} productos al carrito`);
+        setItem(true)
+        addItem(producto,contador)
+    }
+
+    return(
         <>
-            <Item key={producto.id} img={producto.img} nombre={producto.nombre} categoria={producto.categoria} precio={producto.precio} descripcion={producto.descripcion} />
+            <div className='prodDetalle'>
+                <div>{producto.img}</div>
+                <div className="itemDetailsDetalle">
+                    <div className='detalle'>            
+                        <div className="precioProdDetalle">Nombre Prod: {producto.nombre} </div>
+                        <div className="precioProdDetalle">Categoria: {producto.categoria} </div>
+                        <div className="precioProdDetalle">Precio: {producto.precio}</div>
+                        <div className="precioProdDetalle">Descripcion: {producto.descripcion}</div>
+                        <div className='cantidadDetalle'>
+                            {item 
+                                ? <Link to='/Cart'><button className='cardButton'>Terminar compra</button></Link>
+                                : <Count nombre={producto.nombre} onAdd={onAdd}/>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
+
     )
 }
+
 
 export default ItemDetail

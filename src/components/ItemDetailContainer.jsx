@@ -11,12 +11,6 @@ const ItemDetailContainer = () => {
   // busco el ID dentro del arreglo "listProd" para filtrar
   const {id} = useParams();
 
-  useEffect( () => {
-    setTimeout( () => {
-      setLoading(true)
-    }, 2000);
-  },[]);
-
   useEffect(() => {
     const listProd =[
       {
@@ -215,6 +209,7 @@ const ItemDetailContainer = () => {
 
     const myPromise = new Promise((resolved,rejected) =>{
       setTimeout(() => {
+        setLoading(true)
         if (!id) {
           resolved(listProd)          
         }else{
@@ -226,6 +221,9 @@ const ItemDetailContainer = () => {
     myPromise.then((resolved) =>{
       setProducts(resolved);
     })
+    return () =>{
+      setLoading(false)
+    }
   },[id])
 
   if (!loading) {

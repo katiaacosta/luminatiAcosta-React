@@ -10,12 +10,6 @@ const ProductListContainer = () => {
   // busco la categoria, dentro del arreglo "listProd" para filtrar
   const {categoria} = useParams();
 
-  // useEffect( () => {
-  //   setTimeout( () => {
-  //     setLoading(true)
-  //   }, 2000);
-  // },[]);
-
   useEffect( () => {
     const listProd =[
       {
@@ -203,7 +197,8 @@ const ProductListContainer = () => {
       setProducts(resolved);
     })
     return () => {
-      setLoading(false)    }
+      setLoading(false)    
+    }
   },[categoria])
 
   if (!loading) {

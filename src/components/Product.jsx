@@ -12,7 +12,7 @@ const Product = ({nombre,precio,img,id}) => {
         <div>{img}</div>
         <div>{nombre} </div>
         <div className="itemDetails">
-            <div className="precioProd">{precio}</div>
+            <div className="precioProd">${precio}</div>
             <div className='cantidad'>
                 <Link to ={ `/item/${id}`}>
                     <button className="cardButton" onClick={detalle}>Ver detalle</button>

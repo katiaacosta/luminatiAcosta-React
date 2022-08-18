@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import Carrito from "./Carrito"
-// import Product from "./Product"
 
 const Menu = () => {   
     return (

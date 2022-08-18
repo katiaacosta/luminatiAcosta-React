@@ -22,7 +22,7 @@ const ItemDetail = ({producto, contador}) => {
                     <div className='detalle'>            
                         <div className="precioProdDetalle">Nombre Prod: {producto.nombre} </div>
                         <div className="precioProdDetalle">Categoria: {producto.categoria} </div>
-                        <div className="precioProdDetalle">Precio: {producto.precio}</div>
+                        <div className="precioProdDetalle">Precio: ${producto.precio}</div>
                         <div className="precioProdDetalle">Descripcion: {producto.descripcion}</div>
                         <div className='cantidadDetalle'>
                             {item 

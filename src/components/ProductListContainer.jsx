@@ -8,6 +8,7 @@ const ProductListContainer = () => {
 
   const [products,setProducts] = useState([]);
   const[loading, setLoading] = useState(false);
+  // const[error, setError] = useState("")
   // busco la categoria, dentro del arreglo "listProd" para filtrar
   const {categoria} = useParams();
 
@@ -208,31 +209,32 @@ const ProductListContainer = () => {
         }
       }, 2000)
     })
-
+  
     myPromise.then((resolved) =>{
-      setProducts(resolved);
-    })
-    return () => {
-      setLoading(false)    
-    }
-  },[categoria])
+        setProducts(resolved);
+      })
+      return () => {
+        // setError("Error 404")
+        setLoading(false)    
+      }
+    },[categoria])
   
 
-  if (!loading) {
-    return (<div className='pos-center'>
-              <Loader/>
-            </div>)    
-  }
+    if (!loading) {
+      return (<div className='pos-center'>
+                <Loader/>
+              </div>)    
+    }
 
-  return (
-    <>
-      <div className='container'>
-        <div className='row'>
-          <ProductList products={products} />
+    return (
+      <>
+        <div className='container'>
+          <div className='row'>
+            <ProductList products={products} />
+          </div>
         </div>
-      </div>
-    </>
-  )
+      </>
+    )
 }
 
 export default ProductListContainer

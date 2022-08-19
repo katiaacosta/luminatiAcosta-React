@@ -209,7 +209,7 @@ const ItemDetailContainer = () => {
     // ]
 
     // firebase
-    let prod;
+    let prod =[];
     const db = getFirestore();
     const refAProd = doc(db, 'productos', id);
     getDoc(refAProd).then((resolved) => {
@@ -217,6 +217,8 @@ const ItemDetailContainer = () => {
         id: resolved.id,
         ...resolved.data()
       }
+      setProducts(prod)
+      console.log(prod);
     })
     // fin firebase
 
@@ -226,8 +228,8 @@ const ItemDetailContainer = () => {
         if (!id) {
           resolved(prod)          
         }else{
-          // resolved(producto.find((prod) => prod.id == id));
-          resolved(()=> id == prod.id)
+          resolved(prod.find((prod) => prod.id == id));
+          // resolved(()=> id == prod.id)
         }
       }, 2000)
     })

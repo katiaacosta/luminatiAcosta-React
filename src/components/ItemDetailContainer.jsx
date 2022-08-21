@@ -7,8 +7,8 @@ import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
-  const [products,setProducts] = useState([]);
-  const[loading, setLoading] = useState(false);
+  const [producto,setProducto] = useState([]);
+  // const[loading, setLoading] = useState(false);
   // busco el ID dentro del arreglo "listProd" para filtrar
   const {id} = useParams();
 
@@ -212,11 +212,13 @@ const ItemDetailContainer = () => {
     let prod =[];
     const db = getFirestore();
     const refAProd = doc(db, 'productos', id);
-    getDoc(refAProd).then((resolved) => {
+    getDoc(refAProd)
+    .then((resolved) => {
       prod = {
         id: resolved.id,
         ...resolved.data()
       }
+<<<<<<< HEAD
       setProducts(prod)
       console.log(prod);
     })
@@ -233,26 +235,44 @@ const ItemDetailContainer = () => {
         }
       }, 2000)
     })
-
-    myPromise.then((resolved) =>{
-      setProducts(resolved);
+=======
+      setProducto(prod)
+      // console.log(prod);
     })
-    return () =>{
-      setLoading(false)
-    }
+    // fin firebase
+
+    // const myPromise = new Promise((resolved,rejected) =>{
+    //   setTimeout(() => {
+    //     setLoading(true)
+    //     if (!id) {
+    //       resolved(prod)          
+    //     }else{
+    //       resolved(prod.find((producto) => producto.id == id));
+          // resolved(()=> id == prod.id)
+    //     }
+    //   }, 2000)
+    // })
+>>>>>>> cartView
+
+    // myPromise.then((resolved) =>{
+    //   setProducts(resolved);
+    // })
+    // return () =>{
+    //   setLoading(false)
+    // }
   },[id])
 
-  if (!loading) {
-    return (<div className='pos-center'>
-              <Loader/>
-            </div>)    
-  }
+  // if (!loading) {
+  //   return (<div className='pos-center'>
+  //             <Loader/>
+  //           </div>)    
+  // }
 
   return (
     <>
       <div className='container'>
         <div className='row'>
-            <ItemDetail producto={products}/>
+            <ItemDetail producto={producto}/>
         </div>
       </div>
     </>

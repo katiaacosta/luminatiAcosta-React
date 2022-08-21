@@ -1,6 +1,7 @@
 
 import '../components/styles.css'
-import { BsCart3 } from "react-icons/bs"
+// import { BsCart3 } from "react-icons/bs"
+import { FaShoppingCart } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useContextt } from './Context'
 
@@ -10,9 +11,10 @@ import { useContextt } from './Context'
     return (
       <>      
       <Link to="/Cart">
-        < BsCart3 className='boxCarrito'/>
+        {/* < BsCart3 className='boxCarrito'/> */}
+        <FaShoppingCart />
+        <span className='p-1'>{countItems() || ''}</span> 
       </Link>
-      <span className='p-1'>{countItems() || ''}</span>    
 
     </>
   )

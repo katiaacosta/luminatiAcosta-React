@@ -8,8 +8,10 @@ const Product = ({nombre,precio,img,id}) => {
         console.log("click ver detalle");        
     }
     return (
-    <>
-        <div>{img}</div>
+    <>   
+        <div className='images'>
+            <img src={img} alt={nombre} width='100%'/>
+        </div>
         <div>{nombre} </div>
         <div className="itemDetails">
             <div className="precioProd">${precio}</div>

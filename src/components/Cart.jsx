@@ -20,9 +20,13 @@ const Cart = () => {
   
   return (
     <>
-      {
-        listProd.map(producto => <ItemCart key={producto.id} producto={producto}/>)
-      }
+      <div className='container'>
+        <div className='row'>    
+          {
+            listProd.map(producto => <ItemCart key={producto.id} producto={producto}/>)
+          }
+        </div>
+      </div>
       <p>Total: ${totalPrice()}</p>
     </>
   )

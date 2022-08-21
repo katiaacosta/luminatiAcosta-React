@@ -2,14 +2,19 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Loader from './Loader';
 import ProductList from './ProductList'
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 const ProductListContainer = () => {
 
-  const [products,setProducts] = useState([]);
+  const [productos,setproductos] = useState([]);
   const[loading, setLoading] = useState(false);
   // busco la categoria, dentro del arreglo "listProd" para filtrar
   const {categoria} = useParams();
+  useEffect(() => {
+    setTimeout(() => {
+        setLoading(true);  
+    }, 1000);
+}, [])
 
   useEffect( () => {
     // const listProd =[
@@ -182,39 +187,56 @@ const ProductListContainer = () => {
     //     img: <img className='images' src="../img/estante3.png" alt="estante3" />
     //   }        
     // ]
+    
 
     // firebase
     let listProd = []
     const db = getFirestore();
     const refListProd = collection(db, 'productos');
-    getDocs(refListProd).then((resolved) => {
-      listProd = resolved.docs
-      listProd = listProd.map((producto) => {
-        return{id: producto.id,...producto.data(), img: producto.img}
+    if (categoria){
+      const dbFilter = query(refListProd, where('categoria', '==', categoria))
+      getDocs(dbFilter)
+      .then(resolved => 
+        setproductos(resolved.docs.map(prod => ({
+          id:prod.id, ...prod.data()
+        }))))
+    }else{
+      getDocs(refListProd)
+      .then(resolved => 
+        setproductos(resolved.docs.map(prod => ({
+        id:prod.id, ...prod.data()
+      }))))
+    }
+    // getDocs(refListProd).then((resolved) => {
 
-      })
-      console.log(listProd);
-    })
+      
+      // listProd = resolved.docs
+      // listProd = listProd.map((producto) => {
+      //   return{id: producto.id,...producto.data()}
+
+      // })
+      // console.log(listProd);
+    // })
 
     // fin firebase
 
-    const myPromise = new Promise((resolved,rejected) =>{
-      setTimeout(() => { 
-        setLoading(true)
-        if (!categoria) {
-          resolved(listProd)
-        }else{
-          resolved(listProd.filter((prod) => prod.categoria === categoria));
-        }
-      }, 2000)
-    })
+    // const myPromise = new Promise((resolved,rejected) =>{
+    //   setTimeout(() => { 
+    //     setLoading(true)
+    //     if (!categoria) {
+    //       resolved(listProd)
+    //     }else{
+    //       resolved(listProd.filter((prod) => prod.categoria === categoria));
+    //     }
+    //   }, 2000)
+    // })
 
-    myPromise.then((resolved) =>{
-      setProducts(resolved);
-    })
-    return () => {
-      setLoading(false)    
-    }
+    // myPromise.then((resolved) =>{
+    //   setProducts(resolved);
+    // })
+    // return () => {
+    //   setLoading(false)    
+    // }
   },[categoria])
   
 
@@ -228,7 +250,7 @@ const ProductListContainer = () => {
     <>
       <div className='container'>
         <div className='row'>
-          <ProductList products={products} />
+          <ProductList productos={productos} />
         </div>
       </div>
     </>

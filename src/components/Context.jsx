@@ -20,9 +20,7 @@ const ContextProvider = ({children}) => {
 
     const removeItem = (id) => setlistProd(listProd.filter(producto => producto.id !== id));
 
-    const countItems = () => {
-        listProd.reduce((acumulador, producto) => acumulador + producto.quantity, 0)
-    }
+    const countItems = () => listProd.reduce((acumulador, producto) => acumulador + producto.quantity, 0)
 
     const totalPrice = () => { return listProd.reduce((prev, act) => prev + act.quantity * act.precio, 0)}
 

@@ -17,11 +17,11 @@ const Count = ({nombre,onAdd}) => {
         }, 1000);
     }
 
-    useEffect(() => {
-        if (contador === 9) {
-            console.log("Ultima unidad disponible");
-        }
-    },[contador])
+    // useEffect(() => {
+    //     if (contador === 9) {
+    //         console.log("Ultima unidad disponible");
+    //     }
+    // },[contador])
 
     useEffect(() => {        
     },[contador])

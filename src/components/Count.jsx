@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react"
 
-const Count = ({nombre,onAdd}) => {
+const Count = ({stock, nombre,onAdd}) => {
     const [contador, setContador] = useState(0);
 
     function minimo(){
-        setContador(contador - 1)
+        if (contador > stock) {
+            setContador(contador - 1)            
+        }
     }
 
     function maximo(){
-        setContador(contador +  1)
+        if (contador < stock) {
+            setContador(contador +  1)            
+        }
         console.log(`agregando ${nombre} al carrito...`);
-
         setTimeout(() => {
             console.log(`${nombre} agregado exitosamente!`);
             

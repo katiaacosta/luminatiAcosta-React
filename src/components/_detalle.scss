@@ -31,25 +31,25 @@
         margin-bottom: 14px;
     }
 
-    .cardButton {
-        background: rgb(13, 199, 206);
-        border-radius: 10px;
-        border-style: dotted;
-        border-color: rgb(172, 97, 0);
-        color: white;
-        font-weight: 600;
-        padding: 12px 12px;
-        margin: 0.5vh;
-    }
-
-    .cardButton:hover{
-        opacity: 2;
-        color: black;
-    }
-
     .cantidadDetalle{
         display: flex;
         justify-content: center;
         align-items: center;
     }
+}
+
+.cardButton {
+    background: rgb(13, 199, 206);
+    border-radius: 10px;
+    border-style: dotted;
+    border-color: rgb(172, 97, 0);
+    color: white;
+    font-weight: 600;
+    padding: 12px 12px;
+    margin: 0.5vh;
+}
+
+.cardButton:hover{
+    opacity: 2;
+    color: black;
 }

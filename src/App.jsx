@@ -8,6 +8,7 @@ import Menu from './components/Menu';
 import ProductListContainer from './components/ProductListContainer';
 import './components/styles.css'
 import ContextProvider from './components/Context';
+import Checkout from './components/Checkout';
 
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
             <Route path='/item/:id' element={<ItemDetailContainer/>}/>
             {/* carrito de compras */}
             <Route path='/Cart' element={<Cart/>}/>
+            {/* checkout, desde carrito de compras */}
+            <Route path='/checkout' element={<Checkout/>}/>
             {/* error por url incorrecta */}
             <Route path='*' element={<h1> Error 404 </h1>}/>
           </Routes>

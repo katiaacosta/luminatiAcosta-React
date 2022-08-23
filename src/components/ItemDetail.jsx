@@ -30,7 +30,7 @@ const ItemDetail = ({producto, contador}) => {
                     <div className='cantidadDetalle'>
                         {item 
                             ? <Link to='/Cart'><button className='cardButton'>Terminar compra</button></Link>
-                            : <Count nombre={producto.nombre} onAdd={onAdd}/>
+                            : <Count stock={producto.stock} nombre={producto.nombre} onAdd={onAdd}/>
                         }
                     </div>
                 </div>

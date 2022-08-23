@@ -91,7 +91,13 @@
   color: rgb(172, 97, 0);
   margin-bottom: 14px;
 }
-.itemDetailsDetalle .cardButton {
+.itemDetailsDetalle .cantidadDetalle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardButton {
   background: rgb(13, 199, 206);
   border-radius: 10px;
   border-style: dotted;
@@ -101,14 +107,10 @@
   padding: 12px 12px;
   margin: 0.5vh;
 }
-.itemDetailsDetalle .cardButton:hover {
+
+.cardButton:hover {
   opacity: 2;
   color: black;
-}
-.itemDetailsDetalle .cantidadDetalle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .pos-center {
@@ -134,6 +136,24 @@
     transform: rotate(360deg);
   }
 }
+.bloque {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 40px;
+  animation-duration: 1s;
+}
+.bloque .borde {
+  border-radius: 30px;
+  padding: 20px;
+  margin: 20px;
+  border-style: outset;
+  border-color: rgb(13, 199, 206);
+}
+.bloque .contacto-tamanio {
+  display: grid;
+}
+
 body {
   margin: 0;
   width: 100vw;

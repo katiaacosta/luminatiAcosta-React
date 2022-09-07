@@ -8,12 +8,13 @@ const Cart = () => {
 
   if (listProd.length === 0) {
     return (
-      <div>
-        <p>Todavia no agregaste productos al carrito</p>
-        <div>
-          <Link to='/'><button className='cardButton'>Volver a la tienda</button></Link>
-        </div>
-        
+      <div className='bloque'>
+        <div className='col-12 col-md-8 col-lg-8 borde'>
+          <p>Todavia no agregaste productos al carrito</p>
+          <Link to='/'>
+            <button className='cardButton'>Volver a la tienda</button>
+          </Link>
+        </div>        
       </div>
     )    
   }

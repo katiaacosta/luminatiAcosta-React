@@ -25,6 +25,7 @@ const ItemDetail = ({producto, contador}) => {
                         <div className="precioProdDetalle">Categoria: {producto.categoria} </div>
                         <div className="precioProdDetalle">Precio: ${producto.precio}</div>
                         <div className="precioProdDetalle">Descripcion: {producto.descripcion}</div>
+                        <div className="precioProdDetalle">Stock disponible: {producto.stock}</div>
                         <div className='cantidadDetalle'>
                             {item 
                                 ? <Link to='/Cart'><button className='cardButton'>Terminar compra</button></Link>

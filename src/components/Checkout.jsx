@@ -119,7 +119,9 @@ const Checkout = () => {
                     <div className='col-12 col-md-8 col-lg-8 borde'>
                         <p>Felicitaciones, tu compra se ha hecho con éxito. Guarda el siguiente numero de pedido para hacer el seguimiento :</p>
                         <p><strong>{idPedido}</strong></p>
-                        <Link to='/'><button className='cardButton' onClick={cancelar}>Cerrar</button></Link>                        
+                        <Link to='/'>
+                            <button className='cardButton' onClick={cancelar}>Cerrar</button>
+                        </Link>                        
                     </div>
                 </div>
             :
@@ -160,9 +162,9 @@ const Checkout = () => {
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Forma de pago:</label>
                             <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" value={inlineFormCustomSelectPref} onChange = {(e) =>            
                             setInlineFormCustomSelectPref(e.target.value)}>
-                            <option selected>Seleccione...</option>
-                            <option value="Efectivo">Efectivo</option>
-                            <option value="Transferencia">Transferencia</option>
+                                <option selected>Seleccione...</option>
+                                <option value="Efectivo">Efectivo</option>
+                                <option value="Transferencia">Transferencia</option>
                             </select>
                         </p>             
                         <p class="contacto-tamanio">
